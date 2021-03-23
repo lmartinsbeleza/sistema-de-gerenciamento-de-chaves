@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -64,6 +65,15 @@ class UserController extends Controller
 
         return view('user.index', [
             'users' => $users
+        ]);
+    }
+
+    public function show()
+    {
+        $user = $this->user->where('id', Auth::id())->first();
+
+        return view('user.edit',[
+            'user' => $user
         ]);
     }
 

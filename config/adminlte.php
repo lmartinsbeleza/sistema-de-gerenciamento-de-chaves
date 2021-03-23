@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'SGC',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -236,18 +236,18 @@ return [
         ],
         [
             'text' => 'Cadastrar Chave',
-            'url'  => 'admin/blog',
+            'url'  => '/cadastrarChave',
             'icon' => 'fas fa-key',
         ],
         [
             'text' => 'Lista de Chaves',
-            'url'  => 'admin/blog',
+            'url'  => '/chaveIndex',
             'icon' => 'fas fa-key',
         ],
         ['header' => 'Conta'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => '/updateYourSelf',
             'icon' => 'fas fa-fw fa-user',
         ],
     ],
