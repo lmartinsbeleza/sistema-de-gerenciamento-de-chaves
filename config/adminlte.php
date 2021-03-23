@@ -226,12 +226,12 @@ return [
     'menu' => [
         [
             'text' => 'Cadastrar Usuário',
-            'url'  => 'admin/blog',
+            'url'  => '/cadastrarUser',
             'icon' => 'fas fa-user',
         ],
         [
             'text' => 'Lista de Usuários',
-            'url'  => 'admin/blog',
+            'url'  => '/userIndex',
             'icon' => 'fas fa-users',
         ],
         [
