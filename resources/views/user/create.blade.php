@@ -4,17 +4,21 @@
 
 @section('content_header')
 
-    <h1 class="text-center">CADASTRAR NOVO USUÁRIO</h1>
+    <div class="text-center">
+        <img class="img-fluid" src="{{ url('img/img_cadastraruser.png') }}" alt="CADASTRAR USUÁRIO">
+    </div>
 
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            <form action="{{ Route('user.store') }}" method="post" class="form">
-                @csrf
-                @include('user._partials.form')
-            </form>
+    <div class="container col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ Route('user.store') }}" method="post" class="form">
+                    @csrf
+                    @include('user._partials.form')
+                </form>
+            </div>
         </div>
     </div>
 

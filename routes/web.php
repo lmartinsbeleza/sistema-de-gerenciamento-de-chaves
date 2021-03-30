@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChaveController;
+use App\Http\Controllers\ControleController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,12 @@ Route::middleware('auth')->group(function(){
     Route::put('/updateChave/{id}', [ChaveController::class, 'update'])->name('chave.update');
     Route::delete('/destroyChave/{id}', [ChaveController::class, 'destroy'])->name('chave.destroy');
     Route::get('/chaveIndex', [ChaveController::class, 'index'])->name('chave.index');
+
+    /*Rotas de Controle*/
+    Route::get('/pegarChave', [ControleController::class, 'pegar'])->name('controle.pegar');
+    Route::get('/devolverChave', [ControleController::class, 'devolver'])->name('controle.devolver');
+    Route::post('/retirarChave', [ControleController::class, 'retirar'])->name('controle.retirar');
+    Route::post('/entregarChave', [ControleController::class, 'entregar'])->name('controle.entregar');
 });
 
 Auth::routes();

@@ -3,17 +3,21 @@
 @section('title', 'Editar Chave')
 
 @section('content_header')
-    <h3 class="text-center">EDITAR CHAVE</h3>
+    <div class="text-center">
+        <img class="img-fluid" src="{{ url('img/img_attuchave.png') }}" alt="EDITAR CHAVE">
+    </div>
 @stop
 
 @section('content')
-    <div class="card">
-        <div class="card-body">
-            <form action="{{ route('chave.store', $chave->id) }}" method="post" class="form">
-                @csrf
-                @method('put')
-                @include('chave._partials.form')
-            </form>
+    <div class="container col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ route('chave.store', $chave->id) }}" method="post" class="form">
+                    @csrf
+                    @method('put')
+                    @include('chave._partials.form')
+                </form>
+            </div>
         </div>
     </div>
 @endsection

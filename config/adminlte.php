@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => '',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -228,25 +228,39 @@ return [
             'text' => 'Cadastrar Usuário',
             'url'  => '/cadastrarUser',
             'icon' => 'fas fa-user',
+            'can' => 'admin',
         ],
         [
             'text' => 'Lista de Usuários',
             'url'  => '/userIndex',
             'icon' => 'fas fa-users',
+            'can' => 'admin',
         ],
         [
             'text' => 'Cadastrar Chave',
             'url'  => '/cadastrarChave',
             'icon' => 'fas fa-key',
+            'can' => 'admin',
         ],
         [
             'text' => 'Lista de Chaves',
             'url'  => '/chaveIndex',
             'icon' => 'fas fa-key',
+            'can' => 'admin',
+        ],
+        [
+            'text' => 'Agendar Chave',
+            'url'  => '/pegarChave',
+            'icon' => 'fas fa-check-square',
+        ],
+        [
+            'text' => 'Devolver Chave',
+            'url'  => '/devolverChave',
+            'icon' => 'fas fa-arrow-down',
         ],
         ['header' => 'Conta'],
         [
-            'text' => 'profile',
+            'text' => 'Editar Informações',
             'url'  => '/updateYourSelf',
             'icon' => 'fas fa-fw fa-user',
         ],

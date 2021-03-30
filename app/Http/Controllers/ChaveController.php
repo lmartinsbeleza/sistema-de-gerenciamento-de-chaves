@@ -19,17 +19,16 @@ class ChaveController extends Controller
     public function index()
     {
         $chave = $this->chave->latest()->paginate();
-        $sala = $this->sala->get();
 
         return view('chave.index', [
             'chaves' => $chave,
-            'sala' => $sala
         ]);
     }
 
     public function create()
     {
         $sala = $this->sala->get();
+
         return view('chave.create',[
             'sala' => $sala,
         ]);
@@ -37,15 +36,24 @@ class ChaveController extends Controller
 
     public function store(Request $request)
     {
-        $chave = $this->chave->latest()->paginate();
+        $sala = $this->sala;
+        $chave = $this->chave;
+        if ($request->name){
+            $sala->sala = $request->name;
+            $sala->save();
+            $sala = $sala->id;
+        }
+
         $chave->codigo = $request->codigo;
-        $chave->sala = $request->sala;
+        if ($request->name)
+            $chave->sala = $sala;
+        else
+            $chave->sala = $request->sala;
+
         $chave->status = 1;
         $chave->save();
 
-        return view('chave.index', [
-            'chaves' => $chave,
-        ]);
+        return redirect()->route('chave.index');
     }
 
     public function edit($id)
@@ -61,7 +69,6 @@ class ChaveController extends Controller
 
     public function update($id, Request $request)
     {
-        $chaves = $this->chave->latest()->paginate();
         $chave = $this->chave->where('id', $id)->first();
         if ($chave)
             return redirect()->back();
@@ -72,9 +79,7 @@ class ChaveController extends Controller
             'status' => 1
         ]);
 
-        return view('chave.index', [
-            'chaves' => $chaves
-        ]);
+        return redirect()->route('chave.index');
     }
 
     public function destroy($id)

@@ -17,6 +17,7 @@ class StatusSeeder extends Seeder
         DB::table('status')->insert([
             ['status' => 'disponivel'],
             ['status' => 'indisponivel'],
+            ['status' => 'reservada'],
             ['status' => 'atrasada']
         ]);
     }

@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bab30fbb-a1c9-4671-9986-dd717303941f" name="Default Changelist" comment="login funcionando e começando a mexer nas paginas do sistema">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/trabalho-de-linguagem-de-programacao.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+    <list default="true" id="c2bed5f6-f459-4f9d-a6d9-73139e7225ab" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ControleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/controle/_partials/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/controle/devolver.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/controle/pegar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChaveController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChaveController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Chave.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Chave.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_16_152033_create_controle_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_16_152033_create_controle_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/StatusSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/StatusSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chave/_partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chave/_partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chave/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chave/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chave/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chave/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/chave/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chave/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/_partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/form/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_partials/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
   </component>
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
@@ -32,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.0">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -145,7 +154,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1pqfBXoXS0lRJn5D3TCIrajk5s4" />
+  <component name="ProjectId" id="1qAGSkJH5WJbX8RpdBUwWO9Bgcz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -155,7 +164,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/php/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -167,50 +178,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bab30fbb-a1c9-4671-9986-dd717303941f" name="Default Changelist" comment="" />
-      <created>1615915405483</created>
+      <changelist id="c2bed5f6-f459-4f9d-a6d9-73139e7225ab" name="Default Changelist" comment="" />
+      <created>1616631904318</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615915405483</updated>
-      <workItem from="1615915406644" duration="2432000" />
-      <workItem from="1615928461555" duration="3345000" />
-      <workItem from="1615997964829" duration="2025000" />
-      <workItem from="1616249976208" duration="407000" />
-      <workItem from="1616250400952" duration="7542000" />
-      <workItem from="1616435608201" duration="629000" />
-      <workItem from="1616436344052" duration="401000" />
-      <workItem from="1616448395493" duration="646000" />
-      <workItem from="1616454379758" duration="9200000" />
+      <updated>1616631904318</updated>
+      <workItem from="1616631906885" duration="3000" />
+      <workItem from="1616879268142" duration="8000000" />
+      <workItem from="1616960017868" duration="11842000" />
+      <workItem from="1616979520598" duration="2403000" />
+      <workItem from="1617059752596" duration="9430000" />
     </task>
-    <task id="LOCAL-00001" summary="Models Construidas e dando inicio a construção dos controllers">
-      <created>1616000293317</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1616000293317</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Arquivos que faltou adicionar no commit anterior">
-      <created>1616000614146</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1616000614146</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Concertando o login">
-      <created>1616252705075</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1616252705075</updated>
-    </task>
-    <task id="LOCAL-00004" summary="login funcionando e começando a mexer nas paginas do sistema">
-      <created>1616257961015</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1616257961015</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,11 +206,8 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Models Construidas e dando inicio a construção dos controllers" />
-    <MESSAGE value="Arquivos que faltou adicionar no commit anterior" />
-    <MESSAGE value="Concertando o login" />
-    <MESSAGE value="login funcionando e começando a mexer nas paginas do sistema" />
-    <option name="LAST_COMMIT_MESSAGE" value="login funcionando e começando a mexer nas paginas do sistema" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

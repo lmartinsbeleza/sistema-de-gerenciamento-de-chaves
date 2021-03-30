@@ -16,7 +16,7 @@ class CreateControleTable extends Migration
         Schema::create('controles', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();
             $table->string('retirou');
-            $table->string('devolveu');
+            $table->string('devolveu')->nullable();
             $table->unsignedBigInteger('chave');
             $table->timestamps();
 
