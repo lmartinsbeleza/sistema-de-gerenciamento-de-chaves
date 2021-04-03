@@ -23,8 +23,8 @@ class ChaveFactory extends Factory
     {
         return [
             'codigo' => $this->faker->numberBetween(100,500),
-            'status' => $this->faker->numberBetween(1,4),
-            'sala' => $this->faker->numberBetween(5,24)
+            'status' => $this->faker->numberBetween(1,3),
+            'sala' => $this->faker->numberBetween(1,20)
         ];
     }
 }

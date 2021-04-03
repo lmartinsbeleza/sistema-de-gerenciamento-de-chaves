@@ -53,7 +53,7 @@ class ChaveController extends Controller
         $chave->status = 1;
         $chave->save();
 
-        return redirect()->route('chave.index');
+        return redirect()->route('chave.index')->with('mensagem', "Chave Cadastrada com sucesso!");
     }
 
     public function edit($id)
@@ -79,17 +79,14 @@ class ChaveController extends Controller
             'status' => 1
         ]);
 
-        return redirect()->route('chave.index');
+        return redirect()->route('chave.index')->with('mensagem', "Chave Editada com sucesso!");
     }
 
     public function destroy($id)
     {
-        $chaves = $this->chave->latest()->paginate();
         $chave = $this->chave->where('id', $id)->first();
         $chave->destroy($id);
 
-        return view('chave.index', [
-            'chaves' => $chaves
-        ]);
+        return redirect()->route('chave.index')->with('mensagem', "Chave Deletada com sucesso!");
     }
 }

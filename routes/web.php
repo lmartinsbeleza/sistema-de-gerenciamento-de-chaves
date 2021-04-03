@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/devolverChave', [ControleController::class, 'devolver'])->name('controle.devolver');
     Route::post('/retirarChave', [ControleController::class, 'retirar'])->name('controle.retirar');
     Route::post('/entregarChave', [ControleController::class, 'entregar'])->name('controle.entregar');
+    Route::get('/agendarChave', [ControleController::class, 'agendar'])->name('controle.agendar');
+    Route::post('/salvarAgendamentoChave', [ControleController::class, 'salvarAgendamento'])->name('controle.salvar.agendamento');
 });
 
 Auth::routes();

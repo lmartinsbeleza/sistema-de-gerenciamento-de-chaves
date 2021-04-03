@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->cargo = 2;
         $user->save();
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->with('mensagem', "Usuário Cadastrado com sucesso!");
     }
 
     public function edit($id)
@@ -52,7 +52,6 @@ class UserController extends Controller
 
     public function update($id, Request $request)
     {
-        $users = $this->user->where('id', '!=', 1)->latest()->paginate();
         $user = $this->user->where('id', $id)->first();
         if(!$user)
             return redirect()->back();
@@ -63,9 +62,10 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return view('user.index', [
-            'users' => $users
-        ]);
+        if (Auth::user()->cargo == 1)
+            return redirect()->route('user.index')->with('mensagem', "Usuário Editado com sucesso!");
+        else
+            return redirect()->route('dashboard')->with('mensagem', "Usuário Editado com sucesso!");
     }
 
     public function show()
@@ -83,6 +83,6 @@ class UserController extends Controller
 
         $user->destroy($id);
 
-        return view('user.index');
+        return redirect()->route('user.index')->with('mensagem', "Usuário Deletado com sucesso!");
     }
 }

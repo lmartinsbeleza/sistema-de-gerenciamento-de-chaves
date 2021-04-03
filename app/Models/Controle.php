@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Controle extends Model
 {
@@ -12,6 +13,13 @@ class Controle extends Model
     protected $fillable = [
         'retirou',
         'devolveu',
-        'chave'
+        'chave',
+        'dataRetirar',
+        'dataDevolver'
     ];
+
+    public function retirou()
+    {
+        return $this->belongsTo(User::class, 'retirou','id');
+    }
 }

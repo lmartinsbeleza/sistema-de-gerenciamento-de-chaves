@@ -15,10 +15,21 @@ class CreateControleTable extends Migration
     {
         Schema::create('controles', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();
-            $table->string('retirou');
-            $table->string('devolveu')->nullable();
+            $table->unsignedBigInteger('retirou');
+            $table->unsignedBigInteger('devolveu')->nullable();
             $table->unsignedBigInteger('chave');
+            $table->dateTimeTz('dataAgendou');
+            $table->dateTimeTz('dataRetirar')->nullable();
+            $table->dateTimeTz('dataDevolver')->nullable();
             $table->timestamps();
+
+            $table->foreign('retirou')
+                ->references('id')
+                ->on('users');
+
+            $table->foreign('devolveu')
+                ->references('id')
+                ->on('users');
 
             $table->foreign('chave')
                 ->references('id')

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Sala;
 use App\Models\Status;
+use App\Models\Controle;
 use Illuminate\Support\Facades\DB;
 
 class Chave extends Model
@@ -36,5 +37,10 @@ class Chave extends Model
             ->groupBy('status')
             ->orderBy('status')
             ->get();
+    }
+
+    public function controle()
+    {
+        return $this->hasMany(Controle::class, 'chave', 'id');
     }
 }

@@ -9,6 +9,16 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            @if(session('mensagem'))
+                <div class="container"  id="close">
+                    <div class="alert alert-success alert-dismissible fade show col-md-4 mx-auto">
+                        <j class="text-center">{{session('mensagem')}}</j>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            @endif
 
             <div class="text-center col-md-12">
                 <h3 class="text-center">QUANTIDADE DE CHAVES</h3>
@@ -19,7 +29,7 @@
                         <span class="info-box-icon bg-green" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
                             <h4 class="info-box-text">Disponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[0]->quantidadeChaves }}</h5>
+                            <h5 class="info-box-number">{{ $quantidadeChaves[0]->quantidadeChaves ?? "Não possui" }}</h5>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -29,8 +39,8 @@
                     <div class="info-box p-0">
                         <span class="info-box-icon bg-yellow" style="border-radius: 0"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
-                            <h4 class="info-box-text">Disponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[1]->quantidadeChaves }}</h5>
+                            <h4 class="info-box-text">Indisponível</h4>
+                            <h5 class="info-box-number">{{ $quantidadeChaves[1]->quantidadeChaves ?? "Não possui" }}</h5>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -40,32 +50,33 @@
                     <div class="info-box p-0">
                         <span class="info-box-icon bg-blue" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
-                            <h4 class="info-box-text">Disponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[2]->quantidadeChaves }}</h5>
+                            <h4 class="info-box-text">Agendadas</h4>
+                            <h5 class="info-box-number">{{ $quantidadeChaves[2]->quantidadeChaves ?? "Não possui" }}</h5>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
                 </div>
-                <div class="col px-md-12">
+                {{--<div class="col px-md-12">
                     <div class="info-box p-0">
                         <span class="info-box-icon bg-red" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
-                            <h4 class="info-box-text">Disponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[3]->quantidadeChaves }}</h5>
+                            <h4 class="info-box-text">Atrasadas</h4>
+                            <h5 class="info-box-number">{{ $quantidadeChaves[3]->quantidadeChaves ?? "Não possui" }}</h5>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
                     <!-- /.info-box -->
-                </div>
+                </div>--}}
             </div>
 
-            <div class="container">
-                <table class="table table-bordered table-hover table-head-fixed">
+            <div class="container responsive">
+                <table class="table table-bordered table-hover table-head-fixed table-responsive-sm">
                     <thead>
                     <tr>
-                        <th>Sala</th>
+                        <th>Chave da sala</th>
                         <th>Código</th>
+                        <th>Pessoa</th>
                         <th>Status</th>
                     </tr>
                     </thead>
@@ -74,12 +85,13 @@
                         <tr>
                             <td>{{ $chave->sala()->first()->sala }}</td>
                             <td>{{ $chave->codigo }}</td>
+                            <td>{{ $chave->controle()->orderBy('id','desc')->first() ? ( is_null($chave->controle()->orderBy('id','desc')->first()->devolveu) ? $chave->controle()->first()->retirou()->first()->name : "Não foi agendada" ) : "Não foi agendada" }}</td>
                             <td>{{ $chave->status()->first()->status }}</td>
                         </tr>
                     @endforeach
                     </tbody>
                     <tfoot>
-                        <td colspan="3">
+                        <td colspan="4">
                             <span class="float-right">
                                 {{ $chaves->links() }}
                             </span>
@@ -96,65 +108,7 @@
 @stop
 
 @section('js')
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script>
-        Highcharts.chart('container', {
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: 0,
-                plotShadow: false
-            },
-            title: {
-                text: 'Browser<br>shares<br>2017',
-                align: 'center',
-                verticalAlign: 'middle',
-                y: 60
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            accessibility: {
-                point: {
-                    valueSuffix: '%'
-                }
-            },
-            plotOptions: {
-                pie: {
-                    dataLabels: {
-                        enabled: true,
-                        distance: -50,
-                        style: {
-                            fontWeight: 'bold',
-                            color: 'white'
-                        }
-                    },
-                    startAngle: -90,
-                    endAngle: 90,
-                    center: ['50%', '75%'],
-                    size: '110%'
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: 'Browser share',
-                innerSize: '50%',
-                data: [
-                    ['Chrome', 58.9],
-                    ['Firefox', 13.29],
-                    ['Internet Explorer', 13],
-                    ['Edge', 3.78],
-                    ['Safari', 3.42],
-                    {
-                        name: 'Other',
-                        y: 7.61,
-                        dataLabels: {
-                            enabled: false
-                        }
-                    }
-                ]
-            }]
-        });
+        setTimeout(function() {document.getElementById('close').innerHTML = "";}, 5000);
     </script>
 @stop

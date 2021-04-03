@@ -13,7 +13,33 @@
                 <form action="{{ route('controle.retirar') }}" method="post" class="form">
                     @method('post')
                     @csrf
-                    @include('controle._partials.form')
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Sala: </span>
+                        </div>
+{{--                        {{ dd((float)((\Carbon\Carbon::parse($chave[0]->controle()->orderBy('id','desc')->first()->dataAgendou))->floatDiffInMinutes(\Carbon\Carbon::now(), false))) }}--}}
+                        <select class="select2 select form-control" name="sala" onchange="inputCodigo(value)" required>
+                            <option value="" disabled selected>Escolha...</option>
+                            @foreach($chave as $c)
+                                @if(isset($c->controle()->first()->chave))
+                                    @if($c->controle()->first()->chave == $c->id && (\Carbon\Carbon::parse($c->controle()->orderBy('id', 'desc')->first()->dataAgendou))->floatDiffInMinutes(\Carbon\Carbon::now(), false) >= 0)
+                                        <option value="{{ $c->codigo }}">{{ $c->sala()->first()->sala }}</option>
+                                    @endif
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Cód. Chave: </span>
+                        </div>
+                        <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Código da Chave" required>
+                    </div>
+
+                    <div class="row float-right">
+                        <button type="submit" class="btn btn-success">Pegar</button>
+                    </div>
                 </form>
             </div>
         </div>

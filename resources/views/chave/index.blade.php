@@ -11,6 +11,18 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+
+            @if(session('mensagem'))
+                <div class="container"  id="close">
+                    <div class="alert alert-success alert-dismissible fade show col-md-4 mx-auto">
+                        <j class="text-center">{{session('mensagem')}}</j>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            @endif
+
             <table class="table">
                 <thead>
                     <tr>
@@ -50,3 +62,8 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script>
+        setTimeout(function() {document.getElementById('close').innerHTML = "";}, 5000);
+    </script>
+@stop

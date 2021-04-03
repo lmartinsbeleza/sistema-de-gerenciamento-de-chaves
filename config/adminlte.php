@@ -250,6 +250,11 @@ return [
         ],
         [
             'text' => 'Agendar Chave',
+            'url'  => '/agendarChave',
+            'icon' => 'fas ',
+        ],
+        [
+            'text' => 'Pegar Chave',
             'url'  => '/pegarChave',
             'icon' => 'fas fa-check-square',
         ],
