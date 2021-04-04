@@ -13,9 +13,9 @@ class CreateStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('status', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->string('status');
+        Schema::create('status', function (Blueprint $table) {//cria a tabela status
+            $table->unsignedBigInteger('id')->autoIncrement();//cria a linha de id com auto-incremento
+            $table->string('status');//cria a linha de status do tipo string
             $table->timestamps();
         });
     }

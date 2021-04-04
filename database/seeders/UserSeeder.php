@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('users')->insert([//adciona o usuário admin para a utilização do sistema
             'name' => 'admin',
             'email' => 'admin@mail',
             'password' => bcrypt('123'),

@@ -14,7 +14,7 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('status')->insert([
+        DB::table('status')->insert([//adiciona os seguinte valores a tabela status
             ['status' => 'disponivel'],
             ['status' => 'indisponivel'],
             ['status' => 'reservada'],

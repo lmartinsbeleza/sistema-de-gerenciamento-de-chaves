@@ -13,9 +13,9 @@ class CreateCargoTable extends Migration
      */
     public function up()
     {
-        Schema::create('cargos', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->string('cargo');
+        Schema::create('cargos', function (Blueprint $table) {//cria a tabela cargos no banco de dados
+            $table->unsignedBigInteger('id')->autoIncrement();//cria a linha de id com auto-incremento
+            $table->string('cargo');//cria a linha de cargo, que vai guarda o nome de cada cargo
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class ChaveFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition()//função que faz gerar informações aleátorias para inserir no banco de dados
     {
         return [
             'codigo' => $this->faker->numberBetween(100,500),

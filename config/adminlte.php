@@ -251,12 +251,12 @@ return [
         [
             'text' => 'Agendar Chave',
             'url'  => '/agendarChave',
-            'icon' => 'fas ',
+            'icon' => 'fas  fa-calendar-check',
         ],
         [
             'text' => 'Pegar Chave',
             'url'  => '/pegarChave',
-            'icon' => 'fas fa-check-square',
+            'icon' => 'fas fa-thumbs-up',
         ],
         [
             'text' => 'Devolver Chave',

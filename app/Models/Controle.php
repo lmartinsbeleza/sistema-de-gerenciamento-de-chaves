@@ -18,7 +18,7 @@ class Controle extends Model
         'dataDevolver'
     ];
 
-    public function retirou()
+    public function retirou()//função para pegar as informações da chave estrangeira de user
     {
         return $this->belongsTo(User::class, 'retirou','id');
     }

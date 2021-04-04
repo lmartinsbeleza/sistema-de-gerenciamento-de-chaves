@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $this->call([
+        $this->call([//chama todas as seed para popular o banco de dados com as informações iniciais
             CargoSeeder::class,
             StatusSeeder::class,
             UserSeeder::class

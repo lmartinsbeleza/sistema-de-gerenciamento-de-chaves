@@ -13,9 +13,9 @@ class CreateSalaTable extends Migration
      */
     public function up()
     {
-        Schema::create('salas', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->autoIncrement();
-            $table->string('sala');
+        Schema::create('salas', function (Blueprint $table) {//cria a tabela salas
+            $table->unsignedBigInteger('id')->autoIncrement();//cria a linha de id com auto-incremento
+            $table->string('sala');//cria a linha sala do tipo string
             $table->timestamps();
         });
     }

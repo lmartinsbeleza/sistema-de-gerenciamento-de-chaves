@@ -3,9 +3,11 @@
 @section('title', 'Lista de Usuários')
 
 @section('content_header')
+    {{--inicio da imagem que fica aparecendo no topo da tela--}}
     <div class="text-center">
         <img class="img-fluid" src="{{ url('img/img_users.png') }}" alt="LISTA DE USUÁRIO">
     </div>
+    {{--final da imagem que aparece no topo da tela--}}
 @stop
 
 @section('content')

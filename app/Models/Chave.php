@@ -20,26 +20,38 @@ class Chave extends Model
         'status'
     ];
 
-    public function sala()
+    public function sala()//função para pegar as informações de sala pela chave estrangeira
     {
         return $this->belongsTo(Sala::class, 'sala', 'id');
     }
 
-    public function status()
+    public function status()//função para pegar as informações de status pela chave estrangeira
     {
         return $this->belongsTo(Status::class, 'status', 'id');
     }
 
-    public function quantidade()
+    public function quantidade($tipo)//função para verificar a quantidade de chaves com cada status
     {
-        return DB::table($this->model)
-            ->select('status', DB::raw('count(status) as quantidadeChaves'))
-            ->groupBy('status')
-            ->orderBy('status')
-            ->get();
+        switch ($tipo){
+            case 1:
+                return DB::table($this->model)->select(DB::raw('count(*) as quantidade'))->where('status', '=', '1')->first();
+                break;
+
+            case 2:
+                return DB::table($this->model)->select(DB::raw('count(*) as quantidade'))->where('status', '=', '2')->first();
+                break;
+
+            case 3:
+                return DB::table($this->model)->select(DB::raw('count(*) as quantidade'))->where('status', '=', '3')->first();
+                break;
+
+            case 4:
+                return DB::table($this->model)->select(DB::raw('count(*) as quantidade'))->where('status', '=', '4')->first();
+                break;
+        }
     }
 
-    public function controle()
+    public function controle()//função para pegar as informações da tabela cujo o id de chave é a chave estrangeira
     {
         return $this->hasMany(Controle::class, 'chave', 'id');
     }

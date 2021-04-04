@@ -14,6 +14,6 @@ class ChaveSeeder extends Seeder
      */
     public function run()
     {
-        $chave = Chave::factory(20)->create();
+        $chave = Chave::factory(10)->create();//chama a função factory para criar 10 chaves com informações aleátorias
     }
 }

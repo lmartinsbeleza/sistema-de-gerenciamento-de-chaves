@@ -14,6 +14,6 @@ class SalaSeeder extends Seeder
      */
     public function run()
     {
-        $sala = Sala::factory(20)->create();
+        $sala = Sala::factory(10)->create();//chama a função factory para criar 10 salas com informações aleátorias
     }
 }

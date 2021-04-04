@@ -25,10 +25,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index()//manda para a pagina inicial
     {
         $chave = $this->chave->latest()->simplePaginate(10);
-        $quantidadeChaves = $this->chave->quantidade();
+        $quantidadeChaves = $this->chave;
+
         return view('dashboard', [
             'chaves' => $chave,
             'quantidadeChaves' => $quantidadeChaves

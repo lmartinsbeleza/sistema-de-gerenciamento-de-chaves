@@ -9,6 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
+            {{--inicio do alert que vai mostrar as mensagens de sucesso--}}
             @if(session('mensagem'))
                 <div class="container"  id="close">
                     <div class="alert alert-success alert-dismissible fade show col-md-4 mx-auto">
@@ -19,7 +20,9 @@
                     </div>
                 </div>
             @endif
+            {{--final do alert que vai mostar as mensagens de sucesso--}}
 
+            {{--Começo da parte que mostra a quantidade de chaves--}}
             <div class="text-center col-md-12">
                 <h3 class="text-center">QUANTIDADE DE CHAVES</h3>
             </div>
@@ -29,47 +32,32 @@
                         <span class="info-box-icon bg-green" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
                             <h4 class="info-box-text">Disponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[0]->quantidadeChaves ?? "Não possui" }}</h5>
+                            <h5 class="info-box-number">{{ $quantidadeChaves->quantidade(1)->quantidade ?? "Não possui" }}</h5>
                         </div>
-                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box -->
                 </div>
                 <div class="col px-md-12">
                     <div class="info-box p-0">
                         <span class="info-box-icon bg-yellow" style="border-radius: 0"><i class="fa fa-key text-white" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
                             <h4 class="info-box-text">Indisponível</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[1]->quantidadeChaves ?? "Não possui" }}</h5>
+                            <h5 class="info-box-number">{{ $quantidadeChaves->quantidade(2)->quantidade ?? "Não possui" }}</h5>
                         </div>
-                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box -->
                 </div>
                 <div class="col px-md-12">
                     <div class="info-box p-0">
                         <span class="info-box-icon bg-blue" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
                         <div class="text-center info-box-content bg-light">
                             <h4 class="info-box-text">Agendadas</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[2]->quantidadeChaves ?? "Não possui" }}</h5>
+                            <h5 class="info-box-number">{{ $quantidadeChaves->quantidade(3)->quantidade ?? "Não possui" }}</h5>
                         </div>
-                        <!-- /.info-box-content -->
                     </div>
-                    <!-- /.info-box -->
                 </div>
-                {{--<div class="col px-md-12">
-                    <div class="info-box p-0">
-                        <span class="info-box-icon bg-red" style="border-radius: 0"><i class="fa fa-key" aria-hidden="true"></i></span>
-                        <div class="text-center info-box-content bg-light">
-                            <h4 class="info-box-text">Atrasadas</h4>
-                            <h5 class="info-box-number">{{ $quantidadeChaves[3]->quantidadeChaves ?? "Não possui" }}</h5>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>--}}
             </div>
+            {{--fim da parte que mostra a quantidade de chaves--}}
 
+            {{--começo da tabela que mostra as informações--}}
             <div class="container responsive">
                 <table class="table table-bordered table-hover table-head-fixed table-responsive-sm">
                     <thead>
@@ -99,6 +87,7 @@
                     </tfoot>
                 </table>
             </div>
+            {{--final da tabela que mostra as informações--}}
         </div>
     </div>
 @stop

@@ -19,7 +19,7 @@ class SalaFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition()//função que faz gerar informações aleátorias para inserir no banco de dados
     {
         return [
             'sala' => $this->faker->sentence(3)

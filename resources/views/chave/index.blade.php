@@ -3,15 +3,17 @@
 @section('title', 'Lista de Chaves')
 
 @section('content_header')
+    {{--inicio da imagem que fica aparecendo no topo da tela--}}
     <div class="text-center">
         <img class="img-fluid" src="{{ url('img/img_chaves.png') }}" alt="LISTA DE CHAVES">
     </div>
+    {{--final da imagem que aparece no topo da tela--}}
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
-
+            {{--inicio do alert que vai mostrar as mensagens de sucesso--}}
             @if(session('mensagem'))
                 <div class="container"  id="close">
                     <div class="alert alert-success alert-dismissible fade show col-md-4 mx-auto">
@@ -22,7 +24,9 @@
                     </div>
                 </div>
             @endif
+            {{--final do alert que vai mostar as mensagens de sucesso--}}
 
+            {{--inicio da tabela que vai mostrar as informações de chaves--}}
             <table class="table">
                 <thead>
                     <tr>
@@ -59,6 +63,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{--final da tabela que vai mostrar as informações de chaves--}}
         </div>
     </div>
 @endsection

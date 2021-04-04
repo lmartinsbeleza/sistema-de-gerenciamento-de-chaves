@@ -14,7 +14,7 @@ class CargoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cargos')->insert([
+        DB::table('cargos')->insert([//adiciona os seguinte valores a tabela cargos
             ['cargo' => 'admin'],
             ['cargo' => 'comum']
         ]);
